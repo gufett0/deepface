@@ -67,6 +67,13 @@ class VggFaceClient(FacialRecognition):
         embedding = verification.l2_normalize(embedding)
         return embedding.tolist()
 
+    # added by me
+    def get_tensorflow_model(self):
+        """
+        Returns the underlying TensorFlow model.
+        """
+        return self.model
+
 
 def base_model() -> Sequential:
     """
